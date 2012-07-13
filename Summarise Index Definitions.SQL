@@ -1,4 +1,7 @@
-﻿DECLARE @TableName SYSNAME = ''
+﻿/*
+Simple script to summarise what indices exist, on a specific table or all tables, optionally including disabled indices.
+*/
+DECLARE @TableName SYSNAME = ''
 DECLARE @IncludeDisabled bit = 0
 
 SELECT t.NAME AS TableName, i.NAME AS IndexName, cols.IndexColumns, cols.IncludedColumns, i.filter_definition AS Filter, i.is_disabled AS IsDisabled
